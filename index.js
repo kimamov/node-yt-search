@@ -5,7 +5,7 @@ const request = require("request-promise");
 function searchYt(query, page){
     return new Promise((resolve, reject)=>{
         request({
-            uri: `https://www.youtuabe.com/results?search_query=${query}${page? `&page=${page}`: ""}`,
+            uri: `https://www.youtube.com/results?search_query=${query}${page? `&page=${page}`: ""}`,
         })
         .then(data => {
             const $ = cheerio.load(data);
